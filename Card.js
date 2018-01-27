@@ -1,4 +1,3 @@
-// KLASA KANBAN CARD
 function Card(id, name) {
 	var self = this;
 	
@@ -20,21 +19,21 @@ function Card(id, name) {
 		card.append(cardDescription)
 		return card;
 	}
-}
 
-Card.prototype = {
-	removeCard: function() {
-	  this.element.remove();
+	Card.prototype = {
+		removeCard: function() {
+		  this.element.remove();
+		}
 	}
-}
 
-removeCard: function() {
-    var self = this;
-    $.ajax({
-      url: baseUrl + '/card/' + self.id,
-      method: 'DELETE',
-      success: function(){
-        self.element.remove();
-      }
-    });
+	removeCard: function() {
+	    var self = this;
+	    $.ajax({
+	      url: baseUrl + '/card/' + self.id,
+	      method: 'DELETE',
+	      success: function(){
+	        self.element.remove();
+	      }
+	    });
+	}
 }
